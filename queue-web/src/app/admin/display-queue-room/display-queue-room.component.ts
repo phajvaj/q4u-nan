@@ -10,7 +10,6 @@ import { Howl, Howler } from 'howler';
 import { CountdownComponent } from 'ngx-countdown';
 import { Router, ActivatedRoute } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-display-queue-room',
@@ -103,17 +102,17 @@ export class DisplayQueueRoomComponent implements OnInit, OnDestroy {
       });
   }
 
-  async setTimer() {
-    const source = timer(1000, 2000);
-    const abc = source.subscribe(val => {
-      this.subscribeTimer = val % this.timeLeft;
-      //console.log(this.subscribeTimer, this.timeLeft, val, '-');
-
-      if (this.subscribeTimer === 0) {
-        this.getCurrentQueue();
-      }
-    });
-  }
+  // async setTimer() {
+  //   const source = timer(1000, 2000);
+  //   const abc = source.subscribe(val => {
+  //     this.subscribeTimer = val % this.timeLeft;
+  //     //console.log(this.subscribeTimer, this.timeLeft, val, '-');
+  //
+  //     if (this.subscribeTimer === 0) {
+  //       this.getCurrentQueue();
+  //     }
+  //   });
+  // }
 
   async ngOnInit() {
     try {
@@ -446,7 +445,7 @@ export class DisplayQueueRoomComponent implements OnInit, OnDestroy {
     this.connectWebSocket();
     //this._workingItems = [];
     await this.getCurrentQueue();
-    this.setTimer();
+    //this.setTimer();
     //this._workingItems.length === 1 ? this.workingItems = await _.cloneDeep(this._workingItems[0]) : '';
     //this.getWorkingHistory();
   }

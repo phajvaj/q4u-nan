@@ -480,7 +480,7 @@ export class QueueModel {
       .where('date_serv', dateServ)
       .where('room_id', roomId)
       .where('is_completed', 'N')
-      .orderBy('queue_running')
+      .orderBy('date_update')
       .limit(10);
   }
 

@@ -389,7 +389,7 @@ const router = (fastify, { }, next) => {
               // publish mqtt
               const servicePointTopic = process.env.SERVICE_POINT_TOPIC + '/' + servicePointId;
               const departmentTopic = process.env.DEPARTMENT_TOPIC + '/' + departmentId;
-
+              const groupTopic = process.env.GROUP_TOPIC + '/' + servicePointId;
               const globalTopic = process.env.QUEUE_CENTER_TOPIC;
 
               const payload = {
@@ -409,6 +409,7 @@ const router = (fastify, { }, next) => {
               fastify.mqttClient.publish(departmentTopic, JSON.stringify(payload), { qos: 0, retain: false });
               fastify.mqttClient.publish(globalTopic, 'update visit', { qos: 0, retain: false });
               fastify.mqttClient.publish(servicePointTopic, JSON.stringify(payload), { qos: 0, retain: false });
+              fastify.mqttClient.publish(groupTopic, JSON.stringify(payload), { qos: 0, retain: false });
 
             } else {
               reply.status(HttpStatus.INTERNAL_SERVER_ERROR)
