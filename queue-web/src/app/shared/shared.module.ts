@@ -25,6 +25,7 @@ import { ModalSelectPriorityComponent } from './modal-select-priority/modal-sele
 import { ModalSelectDepartmentComponent } from './modal-select-department/modal-select-department.component';
 import { AlertWarningPrinterComponent } from './alert-warning-printer/alert-warning-printer.component';
 import { ModalSelectRoomComponent } from './modal-select-room/modal-select-room.component';
+import { ModalChecklistRoomComponent } from './modal-checklist-room/modal-checklist-room.component';
 import { ModalSettingSoundComponent } from './modal-setting-sound/modal-setting-sound.component';
 import { SoundService } from './sound.service';
 import { KioskService } from './kiosk.service';
@@ -51,7 +52,8 @@ import { KioskService } from './kiosk.service';
     ModalSelectDepartmentComponent,
     AlertWarningPrinterComponent,
     ModalSelectRoomComponent,
-    ModalSettingSoundComponent
+    ModalSettingSoundComponent,
+    ModalChecklistRoomComponent
   ],
   exports: [
     ModalAddServicePointComponent,
@@ -69,7 +71,8 @@ import { KioskService } from './kiosk.service';
     ModalSelectDepartmentComponent,
     AlertWarningPrinterComponent,
     ModalSelectRoomComponent,
-    ModalSettingSoundComponent
+    ModalSettingSoundComponent,
+    ModalChecklistRoomComponent
   ],
   providers: [
     ServicePointService,

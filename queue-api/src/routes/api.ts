@@ -334,6 +334,9 @@ const router = (fastify, { }, next) => {
           // check token
           const rsToken: any = await tokenModel.find(db, token);
           if (rsToken.length) {
+
+            await queueModel.setQueueRoomId(db, vn, roomId);
+
             var rs: any = await queueModel.apiGetCurrentQueueByVN(db, vn, servicePointId);
             if (rs.length) {
               var _queue = rs[0];
@@ -346,7 +349,7 @@ const router = (fastify, { }, next) => {
 
               await queueModel.setQueueRoomNumber(db, queueId, roomId);
               await queueModel.removeCurrentQueue(db, servicePointId, dateServ, queueId);
-              await queueModel.updateCurrentQueue(db, servicePointId, dateServ, queueId, roomId);
+              //await queueModel.updateCurrentQueue(db, servicePointId, dateServ, queueId, roomId);
 
               var _queueIds: any = [];
               _queueIds.push(queueId);
@@ -397,7 +400,8 @@ const router = (fastify, { }, next) => {
                 roomNumber: roomNumber,
                 servicePointId: servicePointId,
                 departmentId: departmentId,
-                isInterview: 'N'
+                isInterview: 'Y',
+                isUpdate: 'Y'
               }
 
               if (rs.length) {

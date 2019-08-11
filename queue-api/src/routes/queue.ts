@@ -630,6 +630,22 @@ const router = (fastify, { }, next) => {
     }
   });
 
+  fastify.get('/working2/:servicePointId', { preHandler: [fastify.authenticate] }, async (req: fastify.Request, reply: fastify.Reply) => {
+
+    const servicePointId = req.params.servicePointId;
+    const query = req.query.query || '';
+
+    try {
+      const dateServ: any = moment().format('YYYY-MM-DD');
+
+      const rs: any = await queueModel.getWorking2(db, dateServ, servicePointId, query);
+      reply.status(HttpStatus.OK).send({ statusCode: HttpStatus.OK, results: rs });
+    } catch (error) {
+      fastify.log.error(error);
+      reply.status(HttpStatus.INTERNAL_SERVER_ERROR).send({ statusCode: HttpStatus.INTERNAL_SERVER_ERROR, message: HttpStatus.getStatusText(HttpStatus.INTERNAL_SERVER_ERROR) })
+    }
+  });
+
   fastify.get('/working-group/:servicePointId', { preHandler: [fastify.authenticate] }, async (req: fastify.Request, reply: fastify.Reply) => {
 
     const servicePointId = req.params.servicePointId;

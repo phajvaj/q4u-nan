@@ -453,6 +453,33 @@ export class QueueModel {
       .orderBy('qd.update_date', 'desc');
   }
 
+  getWorking2(db: knex, dateServ: any, servicePointId: any, query: any) {
+    const _query = `%${query}%`;
+    return db('q4u_queue_detail as qd')
+      .select('qd.service_point_id', 'q.queue_interview', 'qd.date_serv as queue_date', 'qd.last_queue', 'qd.room_id',
+        'q.queue_number', 'q.hn', 'q.vn', 'qd.queue_id', 'q.date_serv', 'q.time_serv', 'qd.update_date', 'p.title', 'p.first_name', 'p.last_name',
+        'p.birthdate', 'pr.priority_name', 'pr.priority_id', 'pr.priority_color',
+        'r.room_name', 'r.room_number', 'sp.service_point_name', 'sp.department_id', 'q.is_completed')
+      .innerJoin('q4u_queue as q', 'q.queue_id', 'qd.queue_id')
+      .innerJoin('q4u_person as p', 'p.hn', 'q.hn')
+      .innerJoin('q4u_priorities as pr', 'pr.priority_id', 'q.priority_id')
+      .innerJoin('q4u_service_rooms as r', 'r.room_id', 'qd.room_id')
+      .innerJoin('q4u_service_points as sp', 'sp.service_point_id', 'q.service_point_id')
+      .where('qd.date_serv', dateServ)
+      .where('qd.service_point_id', servicePointId)
+      .where((w) => {
+        w.orWhere('q.hn', 'like', _query)
+          .orWhere('p.first_name', 'like', _query)
+          .orWhere('p.last_name', 'like', _query)
+          .orWhereRaw(`REPLACE(q.queue_number,' ','') like '${_query}'`);
+      })
+      .whereNot('q.mark_pending', 'Y')
+      .whereNot('q.is_cancel', 'Y')
+      .groupByRaw('qd.date_serv, qd.service_point_id, qd.room_id')
+      .orderBy('qd.update_date', 'desc')
+        .limit(3);
+  }
+
   getWorkingGroup(db: knex, dateServ: any, servicePointId: any) {
     return db('q4u_queue_group_detail as qd')
       .select('qd.service_point_id', 'q.queue_interview', 'qd.date_serv as queue_date', 'qd.last_queue', 'qd.room_id',
@@ -480,6 +507,7 @@ export class QueueModel {
       .where('date_serv', dateServ)
       .where('room_id', roomId)
       .where('is_completed', 'N')
+      .where('is_cancel', 'N')
       .orderBy('date_update')
       .limit(10);
   }
@@ -676,11 +704,18 @@ export class QueueModel {
 
   }
 
-  setQueueRoomNumber(db: knex, queueId, roomId) {
+  setQueueRoomId(db: knex, vn, roomId) {
     return db('q4u_queue')
-      .where('queue_id', queueId)
+      .where('vn', vn)
       .update({ room_id: roomId });
   }
+
+  setQueueRoomNumber(db: knex, queueId, roomId) {
+    return db('q4u_queue')
+        .where('queue_id', queueId)
+        .update({ room_id: roomId });
+  }
+
   setQueueGroupRoomNumber(db: knex, queueId, roomId) {
     return db('q4u_queue')
       .whereIn('queue_id', queueId)

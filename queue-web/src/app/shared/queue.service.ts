@@ -158,6 +158,24 @@ export class QueueService {
     return this.httpClient.get(_url, _httpOptions).toPromise();
   }
 
+  async getWorking2(servicePointId: any, token: any = null, query = '') {
+    const _url = `${this.apiUrl}/queue/working2/${servicePointId}?query=${query}`;
+    var _httpOptions = {};
+
+    if (token) {
+      _httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        })
+      };
+    } else {
+      _httpOptions = this.httpOptions;
+    }
+
+    return this.httpClient.get(_url, _httpOptions).toPromise();
+  }
+
   async getWorkingGroup(servicePointId: any, token: any = null) {
     const _url = `${this.apiUrl}/queue/working-group/${servicePointId}`;
     var _httpOptions = {};
@@ -343,6 +361,24 @@ export class QueueService {
 
   async getSound(servicePointId: any, token: any = null) {
     const _url = `${this.apiUrl}/queue/sound/service-point?servicePointId=${servicePointId}`;
+    var _httpOptions = {};
+
+    if (token) {
+      _httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        })
+      };
+    } else {
+      _httpOptions = this.httpOptions;
+    }
+
+    return this.httpClient.get(_url, _httpOptions).toPromise();
+  }
+
+  async getRoomInfo(roomId: any, token: any = null) {
+    const _url = `${this.apiUrl}/service-rooms/id/${roomId}`;
     var _httpOptions = {};
 
     if (token) {

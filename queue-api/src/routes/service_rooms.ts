@@ -24,6 +24,18 @@ const router = (fastify, { }, next) => {
     }
   })
 
+  fastify.get('/id/:roomId', { preHandler: [fastify.authenticate] }, async (req: fastify.Request, reply: fastify.Reply) => {
+
+    try {
+      const roomId = req.params.roomId;
+      const rs: any = await roomModel.info(db, roomId);
+      reply.status(HttpStatus.OK).send({ statusCode: HttpStatus.OK, results: rs })
+    } catch (error) {
+      fastify.log.error(error);
+      reply.status(HttpStatus.INTERNAL_SERVER_ERROR).send({ statusCode: HttpStatus.INTERNAL_SERVER_ERROR, message: HttpStatus.getStatusText(HttpStatus.INTERNAL_SERVER_ERROR) })
+    }
+  })
+
   // save new service room
   fastify.post('/', { preHandler: [fastify.authenticate, fastify.verifyAdmin] }, async (req: fastify.Request, reply: fastify.Reply) => {
     const roomName = req.body.roomName;
