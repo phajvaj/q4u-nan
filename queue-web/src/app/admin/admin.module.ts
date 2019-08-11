@@ -27,6 +27,7 @@ import { PrinterComponent } from './settings/printer/printer.component';
 import { DisplayQueueGroupComponent } from './display-queue-group/display-queue-group.component';
 import { SettingKioskComponent } from './setting-kiosk/setting-kiosk.component';
 import { DisplayQueueRoomsComponent } from './display-queue-rooms/display-queue-rooms.component';
+import { DisplayQueueRoomComponent } from './display-queue-room/display-queue-room.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { DisplayQueueRoomsComponent } from './display-queue-rooms/display-queue-
     PrinterComponent,
     DisplayQueueGroupComponent,
     SettingKioskComponent,
-    DisplayQueueRoomsComponent
+    DisplayQueueRoomsComponent,
+    DisplayQueueRoomComponent
   ],
   imports: [
     CommonModule,
