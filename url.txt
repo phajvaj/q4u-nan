@@ -1,11 +1,11 @@
 http://172.16.0.240:90/#/display-queue-rooms
 ?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZSI6Img0dSIsImRlc2NyaXB0aW9uIjoiZm9yIGFjY2VzcyBRNFUgYXBpIiwiUVVFVUVfQ0VOVEVSX1RPUElDIjoicXVldWUvY2VudGVyIiwiU0VSVklDRV9QT0lOVF9UT1BJQyI6InF1ZXVlL3NlcnZpY2UtcG9pbnQiLCJERVBBUlRNRU5UX1RPUElDIjoicXVldWUvZGVwYXJ0bWVudCIsIkdST1VQX1RPUElDIjoicXVldWUvZ3JvdXAiLCJOT1RJRllfVVNFUiI6InE0dSIsIk5PVElGWV9QQVNTV09SRCI6IiMjcTR1IyMiLCJOT1RJRllfU0VSVkVSIjoiMTcyLjE2LjAuMjQwIiwiTk9USUZZX1BPUlQiOiI4ODg5IiwiU1BFQUtfU0lOR0xFIjoiTiIsImlhdCI6MTU2NTUxNzQxMSwiZXhwIjoxNTk3MDc1MDExfQ.TFqTLKU8Lc93xYbmVWZwxeruDjEHRCh-tpii3afsM_0
-&servicePointId=1
-&servicePointName=ตรวจโรคทั่วไป
-&roomId1=8
-&roomId2=15
-&roomId3=9
-&roomId4=14
+&servicePointId=2
+&servicePointName=ทันตกรรม
+&roomId1=1
+&roomId2=2
+&roomId3=3
+&roomId4=4
 
 
 [ngClass]="{'invalid-blink': item.queue_number===currentQueueNumber,'bg-primary':item.queue_number!==currentQueueNumber}"

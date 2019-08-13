@@ -57,6 +57,14 @@ export class QueueModel {
       });
   }
 
+  markCompleted2(db: knex, queueId: any, state: any) {
+    return db('q4u_queue')
+        .where('queue_id', queueId)
+        .update({
+          'is_completed': state,
+        });
+  }
+
   markRoomed(db: knex, queueId: any, roomId: any) {
     return db('q4u_queue')
         .where('queue_id', queueId)
