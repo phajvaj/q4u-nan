@@ -228,7 +228,9 @@ const router = (fastify, { }, next) => {
               await queueModel.updateCurrentQueue(db, servicePointId, dateServ, queueId, roomId);
               await queueModel.markUnPending(db, queueId);
 
-              await queueModel.markCompleted(db, queueId);
+              if (isInterview == 'N')
+                await queueModel.markCompleted(db, queueId);
+              
               var _queueIds: any = [];
               _queueIds.push(queueId);
 
