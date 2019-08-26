@@ -541,7 +541,7 @@ export class DisplayQueueRoomsComponent implements OnInit, OnDestroy {
           this.currentQueueNumber = arr[0].queue_number;
           this.currentRoomName = arr[0].room_name;
           this.currentRoomNumber = arr[0].room_number;
-          this.currentInterView = arr[0].is_interview;
+          this.currentInterView = arr[0].is_completed;
         } else {
           this.currentHn = null;
           this.currentQueueNumber = null;

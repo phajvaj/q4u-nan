@@ -206,20 +206,20 @@ p {
 }
 
 @-webkit-keyframes invalid-succes {
-  from { background-color: #46c35f; }
-  to { background-color: #149783; }
+  from { background-color: #5f3985; }
+  to { background-color: #5E50F9; }
 }
 @-moz-keyframes invalid-succes {
-  from { background-color: #46c35f; }
-  to { background-color: #149783; }
+  from { background-color: #5f3985; }
+  to { background-color: #5E50F9; }
 }
 @-o-keyframes invalid-succes {
-  from { background-color: #46c35f; }
-  to { background-color: #149783; }
+  from { background-color: #5f3985; }
+  to { background-color: #5E50F9; }
 }
 @keyframes invalid-succes {
-  from { background-color: #46c35f; }
-  to { background-color: #149783; }
+  from { background-color: #5f3985; }
+  to { background-color: #5E50F9; }
 }
 .invalid-succes {
   -webkit-animation: invalid-succes 1s infinite; /* Safari 4+ */
