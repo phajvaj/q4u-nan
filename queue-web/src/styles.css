@@ -205,27 +205,27 @@ p {
   color: #ffffff;
 }
 
-@-webkit-keyframes invalid-succes {
+@-webkit-keyframes invalid-success {
   from { background-color: #5f3985; }
   to { background-color: #5E50F9; }
 }
-@-moz-keyframes invalid-succes {
+@-moz-keyframes invalid-success {
   from { background-color: #5f3985; }
   to { background-color: #5E50F9; }
 }
-@-o-keyframes invalid-succes {
+@-o-keyframes invalid-success {
   from { background-color: #5f3985; }
   to { background-color: #5E50F9; }
 }
-@keyframes invalid-succes {
+@keyframes invalid-success {
   from { background-color: #5f3985; }
   to { background-color: #5E50F9; }
 }
 .invalid-succes {
-  -webkit-animation: invalid-succes 1s infinite; /* Safari 4+ */
-  -moz-animation:    invalid-succes 1s infinite; /* Fx 5+ */
-  -o-animation:      invalid-succes 1s infinite; /* Opera 12+ */
-  animation:         invalid-succes 1s infinite; /* IE 10+ */
+  -webkit-animation: invalid-success 1s infinite; /* Safari 4+ */
+  -moz-animation:    invalid-success 1s infinite; /* Fx 5+ */
+  -o-animation:      invalid-success 1s infinite; /* Opera 12+ */
+  animation:         invalid-success 1s infinite; /* IE 10+ */
   color: #ffffff;
 }
 
