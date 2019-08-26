@@ -221,7 +221,7 @@ p {
   from { background-color: #5f3985; }
   to { background-color: #5E50F9; }
 }
-.invalid-succes {
+.invalid-success {
   -webkit-animation: invalid-success 1s infinite; /* Safari 4+ */
   -moz-animation:    invalid-success 1s infinite; /* Fx 5+ */
   -o-animation:      invalid-success 1s infinite; /* Opera 12+ */
