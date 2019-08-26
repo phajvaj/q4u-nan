@@ -55,6 +55,7 @@ export class DisplayQueueRoomsComponent implements OnInit, OnDestroy {
   workingItemsHistory: any = [];
   currentQueueNumber: any;
   currentRoomNumber: any;
+  currentInterView: any;
   currentHn: any;
   currentRoomName: any;
 
@@ -540,11 +541,13 @@ export class DisplayQueueRoomsComponent implements OnInit, OnDestroy {
           this.currentQueueNumber = arr[0].queue_number;
           this.currentRoomName = arr[0].room_name;
           this.currentRoomNumber = arr[0].room_number;
+          this.currentInterView = arr[0].is_interview;
         } else {
           this.currentHn = null;
           this.currentQueueNumber = null;
           this.currentRoomName = null;
           this.currentRoomNumber = null;
+          this.currentInterView = null;
         }
       } else {
         console.log(rs.message);

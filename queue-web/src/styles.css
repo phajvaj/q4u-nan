@@ -205,6 +205,30 @@ p {
   color: #ffffff;
 }
 
+@-webkit-keyframes invalid-succes {
+  from { background-color: #46c35f; }
+  to { background-color: #149783; }
+}
+@-moz-keyframes invalid-succes {
+  from { background-color: #46c35f; }
+  to { background-color: #149783; }
+}
+@-o-keyframes invalid-succes {
+  from { background-color: #46c35f; }
+  to { background-color: #149783; }
+}
+@keyframes invalid-succes {
+  from { background-color: #46c35f; }
+  to { background-color: #149783; }
+}
+.invalid-succes {
+  -webkit-animation: invalid-blink 1s infinite; /* Safari 4+ */
+  -moz-animation:    invalid-blink 1s infinite; /* Fx 5+ */
+  -o-animation:      invalid-blink 1s infinite; /* Opera 12+ */
+  animation:         invalid-blink 1s infinite; /* IE 10+ */
+  color: #ffffff;
+}
+
 .content-wrapper {
     background: #e9ebee;
     padding: 2.75rem 2.25rem;

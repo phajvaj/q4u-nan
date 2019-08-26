@@ -467,7 +467,7 @@ export class QueueModel {
       .select('qd.service_point_id', 'q.queue_interview', 'qd.date_serv as queue_date', 'qd.last_queue', 'qd.room_id',
         'q.queue_number', 'q.hn', 'q.vn', 'qd.queue_id', 'q.date_serv', 'q.time_serv', 'qd.update_date', 'p.title', 'p.first_name', 'p.last_name',
         'p.birthdate', 'pr.priority_name', 'pr.priority_id', 'pr.priority_color',
-        'r.room_name', 'r.room_number', 'sp.service_point_name', 'sp.department_id', 'q.is_completed')
+        'r.room_name', 'r.room_number', 'sp.service_point_name', 'sp.department_id', 'q.is_completed', 'q.is_interview')
       .innerJoin('q4u_queue as q', 'q.queue_id', 'qd.queue_id')
       .innerJoin('q4u_person as p', 'p.hn', 'q.hn')
       .innerJoin('q4u_priorities as pr', 'pr.priority_id', 'q.priority_id')

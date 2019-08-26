@@ -230,7 +230,7 @@ const router = (fastify, { }, next) => {
 
               if (isInterview == 'N')
                 await queueModel.markCompleted(db, queueId);
-              
+
               var _queueIds: any = [];
               _queueIds.push(queueId);
 
