@@ -66,7 +66,7 @@
         <div class="row">
           <div class="col-md-4" *ngFor="let item of workingItems; let idx = index;">
             <div
-              [ngClass]="{'invalid-succes': item.queue_number===currentQueueNumber && currentInterView==='N', 'invalid-blink': item.queue_number===currentQueueNumber && currentInterView==='Y','bg-primary':item.queue_number!==currentQueueNumber}"
+              [ngClass]="{'invalid-succes': item.queue_number===currentQueueNumber && currentInterView==='N', 'invalid-blink': item.queue_number===currentQueueNumber,'bg-primary':item.queue_number!==currentQueueNumber}"
               class="row bg-primary text-white" style="margin: 20px 5px 0px 5px; border-radius: 20px;
               border: 5px solid white; padding: 5px;">
               <div class="col-md-9">
@@ -94,7 +94,7 @@
 
                 <div *ngFor="let item of room1Items">
                   <div class="row">
-                    <div class="col-md-12" [ngClass]="{'invalid-blink': item.queue_number===currentQueueNumber,'bg-primary':item.queue_number!==currentQueueNumber}">
+                    <div class="col-md-12">
                         <span class="font-weight-bold" style="letter-spacing: 1px; font-size: 8rem;">
                           {{ item.queue_number || '-'}}
                         </span>
