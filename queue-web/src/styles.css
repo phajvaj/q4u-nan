@@ -222,10 +222,10 @@ p {
   to { background-color: #149783; }
 }
 .invalid-succes {
-  -webkit-animation: invalid-blink 1s infinite; /* Safari 4+ */
-  -moz-animation:    invalid-blink 1s infinite; /* Fx 5+ */
-  -o-animation:      invalid-blink 1s infinite; /* Opera 12+ */
-  animation:         invalid-blink 1s infinite; /* IE 10+ */
+  -webkit-animation: invalid-succes 1s infinite; /* Safari 4+ */
+  -moz-animation:    invalid-succes 1s infinite; /* Fx 5+ */
+  -o-animation:      invalid-succes 1s infinite; /* Opera 12+ */
+  animation:         invalid-succes 1s infinite; /* IE 10+ */
   color: #ffffff;
 }
 
