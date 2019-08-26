@@ -64,6 +64,11 @@
         </div>
 
         <div class="row">
+          <div class="col-md-12">
+            <h2>คิวที่เรียกแล้ว</h2>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-4" *ngFor="let item of workingItems; let idx = index;">
             <div
               [ngClass]="{'invalid-blink': item.queue_number===currentQueueNumber && currentInterView==='N', 'invalid-success': item.queue_number===currentQueueNumber && currentInterView==='Y','bg-primary':item.queue_number!==currentQueueNumber}"
@@ -84,6 +89,11 @@
 
         </div>
 
+        <div class="row">
+          <div class="col-md-12">
+            <h2>คิวที่รอเรียก</h2>
+          </div>
+        </div>
         <div class="row">
           <div class="col-md-{{_cols}}" *ngIf="room1">
             <div class="card bg-primary text-white">
